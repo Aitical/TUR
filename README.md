@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# Debiased All-in-one Image Restoration with Task Uncertainty Regularization
+# [AAAI 2025] Debiased All-in-one Image Restoration with Task Uncertainty Regularization
 
 [Gang Wu (吴刚)](https://scholar.google.com/citations?user=JSqb7QIAAAAJ), [Junjun Jiang (江俊君)](http://homepage.hit.edu.cn/jiangjunjun), [Yijun Wang (王奕钧)](), [Kui Jiang (江奎)](https://github.com/kuijiang94), and [Xianming Liu (刘贤明)](http://homepage.hit.edu.cn/xmliu)
 
@@ -113,6 +113,16 @@ Table: Comparison on de-weathering tasks on real-world datasets following [2]
 | | TransWeather [3] | 26.71 | 0.86 |
 | | **TransWeather (Ours)** | **29.96** | **0.92** |
 
+## Citation
+If our project helps your research or work, please cite our paper or star this repo. Thank you!
+```
+@inproceedings{wu2025debiased,
+  title={Debiased All-in-one Image Restoration with Task Uncertainty Regularization},
+  author={Gang Wu, Junjun Jiang, Yijun Wang, Kui Jiang, and Xianming Liu},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2025}
+}
+```
 
 ## Acknowledgement
 
