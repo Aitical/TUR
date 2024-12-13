@@ -1,6 +1,7 @@
 
 
 <div align="center">
+<a href="https://www.imagehub.cc/image/TUR-logo.CJAeR0"><img src="https://s1.imagehub.cc/images/2024/12/13/ba6b730d67ca5f72b38570315db39241.png" alt="TUR logo" border="0"></a>
 
 # [AAAI 2025] Debiased All-in-one Image Restoration with Task Uncertainty Regularization
 
