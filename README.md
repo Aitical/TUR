@@ -37,7 +37,7 @@ Extensive experiments across diverse all-in-one restoration settings demonstrate
 | --- | --- | 
 |[<img src="assets/airnet.png" width="385">](https://imgsli.com/MzI3MzEw) |[<img src="assets/promptir.png" width="385">](https://imgsli.com/MzI3MzE2) |
 
-<a href="https://www.imagehub.cc/image/intro-improve2.bkhl1O"><img src="https://s1.imagehub.cc/images/2024/08/19/ba47d9f56f5b9b684c8faa2788c3dfeb.png" alt="intro improve2" border="0" width="80%"></a>
+<a href="https://www.imagehub.cc/image/intro-improve2.bkhl1O"><img src="https://s1.imagehub.cc/images/2024/08/19/ba47d9f56f5b9b684c8faa2788c3dfeb.png" alt="intro improve2" border="0"></a>
 
 ## Results
 
