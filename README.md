@@ -19,38 +19,19 @@
 
 
 ## Overview
-|<img src="assets/framework.png" width="385"> |  <img src="assets/uncertainty.png" width="385"> |
-|---|---|
-|Framework| Task Uncertainty|
+
+<div align="center"> <table> <tr> <td align="center"><img src="assets/framework.png" width="385"><br>Framework</td> <td align="center"><img src="assets/uncertainty.png" width="385"><br>Task Uncertainty</td> </tr> </table> </div>
 
 
->All-in-one image restoration is a fundamental low-level vision task with significant real-world applications. The primary challenge lies in  addressing diverse degradations within a single model. 
-While current methods primarily exploit task prior information to guide the restoration models, they typically employ uniform multi-task learning, overlooking the heterogeneity in model optimization across different degradation tasks.
-To eliminate the bias,  
-we propose a task-aware optimization strategy, that introduces adaptive task-specific regularization for multi-task image restoration learning. 
-Specifically, our method dynamically weights and balances losses for different restoration tasks during training, encouraging the implementation of the most reasonable optimization route. In this way, we can achieve more robust and effective model training.
-Notably, our approach can serve as a plug-and-play strategy to enhance existing models without requiring modifications during inference.
-Extensive experiments across diverse all-in-one restoration settings demonstrate the superiority and generalization of our approach. For instance, AirNet retrained with TUR achieves average improvements of **1.3 dB** on three distinct tasks and **1.81 dB** on five distinct all-in-one tasks. These results underscore TUR's effectiveness in advancing the SOTAs in all-in-one image restoration, paving the way for more robust and versatile image restoration.
+>All-in-one image restoration is a fundamental low-level vision task with significant real-world applications. The primary challenge lies in  addressing diverse degradations within a single model. While current methods primarily exploit task prior information to guide the restoration models, they typically employ uniform multi-task learning, overlooking the heterogeneity in model optimization across different degradation tasks. To eliminate the bias, we propose a task-aware optimization strategy, that introduces adaptive task-specific regularization for multi-task image restoration learning. Specifically, our method dynamically weights and balances losses for different restoration tasks during training, encouraging the implementation of the most reasonable optimization route. In this way, we can achieve more robust and effective model training. Notably, our approach can serve as a plug-and-play strategy to enhance existing models without requiring modifications during inference. Extensive experiments across diverse all-in-one restoration settings demonstrate the superiority and generalization of our approach. For instance, AirNet retrained with TUR achieves average improvements of **1.3 dB** on three distinct tasks and **1.81 dB** on five distinct all-in-one tasks. These results underscore TUR's effectiveness in advancing the SOTAs in all-in-one image restoration, paving the way for more robust and versatile image restoration.
 
 
-|[<img src="assets/transweather.png" width="385">](https://imgsli.com/MzI3MzEz) |[<img src="assets/outdoor-rain.png" width="385">](https://imgsli.com/MzI3MzE0)|
-| --- | --- | 
-|[<img src="assets/airnet.png" width="385">](https://imgsli.com/MzI3MzEw) |[<img src="assets/promptir.png" width="385">](https://imgsli.com/MzI3MzE2) |
-
-<a href="https://www.imagehub.cc/image/intro-improve2.bkhl1O"><img src="https://s1.imagehub.cc/images/2024/08/19/ba47d9f56f5b9b684c8faa2788c3dfeb.png" alt="intro improve2" border="0"></a>
+<div align="center"> <table> <tr> <td align="center"><a href="https://imgsli.com/MzI3MzEz"><img src="assets/transweather.png" width="385"></a></td> <td align="center"><a href="https://imgsli.com/MzI3MzE0"><img src="assets/outdoor-rain.png" width="385"></a></td> </tr> <tr> <td align="center"><a href="https://imgsli.com/MzI3MzEw"><img src="assets/airnet.png" width="385"></a></td> <td align="center"><a href="https://imgsli.com/MzI3MzE2"><img src="assets/promptir.png" width="385"></a></td> </tr> </table> <a href="https://www.imagehub.cc/image/intro-improve2.bkhl1O"> <img src="https://s1.imagehub.cc/images/2024/08/19/ba47d9f56f5b9b684c8faa2788c3dfeb.png" alt="intro improve2" border="0"> </a> </div>
 
 ## Results
 
 Table: Comparison on 7 distinct degradation tasks introduced in [1].
-
-| Methods | SR | Blur | Noise | JPEG | Rain | Haze | Dark | Avg. |
-|---------|-----|------|-------|------|------|------|------|------|
-| SRResNet | 25.52 | 30.01 | 30.49 | 32.46 | 32.38 | 25.57 | 30.20 | 29.52 |
-| SRResNet-S [1] | 25.72 | 30.49 | 30.67 | 32.73 | 32.81 | 25.78 | 30.45 | 29.84 |
-| **SRResNet (Ours)** | **25.55** | **30.65** | **30.65** | **32.92** | **35.20** | **26.16** | **32.04** | **30.45** |
-| Uformer | 25.80 | 30.53 | 30.84 | 33.13 | 33.39 | 27.93 | 33.27 | 30.70 |
-| Uformer-S [1] | 26.07 | 31.11 | 30.96 | 33.27 | 35.96 | 28.29 | 32.80 | 31.21 |
-| **Uformer (Ours)** | **26.11** | **31.51** | **31.20** | **33.46** | **38.13** | **30.91** | **38.24** | **32.79** |
+<div align="center"> <table> <thead> <tr> <th>Methods</th> <th>SR</th> <th>Blur</th> <th>Noise</th> <th>JPEG</th> <th>Rain</th> <th>Haze</th> <th>Dark</th> <th>Avg.</th> </tr> </thead> <tbody> <tr> <td>SRResNet</td> <td>25.52</td> <td>30.01</td> <td>30.49</td> <td>32.46</td> <td>32.38</td> <td>25.57</td> <td>30.20</td> <td>29.52</td> </tr> <tr> <td><b>SRResNet (Ours)</b></td> <td><b>25.55</b></td> <td><b>30.65</b></td> <td><b>30.65</b></td> <td><b>32.92</b></td> <td><b>35.20</b></td> <td><b>26.16</b></td> <td><b>32.04</b></td> <td><b>30.45</b></td> </tr> </tbody> </table> </div>
 
 
 Table: Comparisons under the three-degradation all-in-one setting: a unified model is trained on a combined set of images obtained from all degradation types and levels.
