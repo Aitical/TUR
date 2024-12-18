@@ -1,0 +1,413 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  color: #1772d0;
+}
+
+header {
+  margin: 4em 0px 2em 0px;
+}
+
+body {
+  max-width: 850px;
+  margin: 0px auto;
+}
+
+body.wide {
+  max-width: 86%;
+}
+
+h2 {
+  font-weight: 400;
+  margin-bottom: 0.3em;
+}
+
+h1 .title-main  {
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+  margin-bottom: 0.2em;
+}
+
+h1 .title-main > img {
+  display: block;
+  height: 1.3em;
+}
+h1 .title-main > span {
+  display: block;
+  line-height: 1.3em;
+}
+
+h1 .title-small  {
+  font-size: 0.8em;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 20px 0 20px;
+}
+
+figure {
+  margin: 1rem 0px 2rem 0px;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.authors {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+
+.authors > * {
+  /*padding: 0px 1em;*/
+  flex: 0 1 20ch;
+  flex-basis: 17ch;
+  margin: 0em 0px 0.8em 0px;
+  max-width: 17ch;
+}
+
+.authors .author-name {
+  font-weight: 700;
+  font-size: 1.1em;
+  display: block;
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+
+.authors .author-name a {
+  text-decoration: none;
+  color: black;
+}
+
+.authors .author-name a:hover {
+  color: #1772d0;
+  transition: color 0.2s ease-in-out;
+  text-decoration: underline;
+}
+
+.authors .author-affiliation {
+  display: block;
+  text-align: center;
+}
+
+.links {
+  margin-top: 0.75em;
+  margin-bottom: 1.75em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.button .ti {
+  margin-right: 0.3em;
+}
+.button {
+  border-radius: 290486px;
+  padding-left: calc(1em + .25em);
+  padding-right: calc(1em + .25em);
+  font-size: 1em;
+  background-color: rgb(59 130 246);
+  font-weight: 600;
+  border-color: transparent;
+  color: #fff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  border-width: 1px;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(.5em - 1px);
+  padding-top: calc(.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  box-shadow: none;
+  display: inline-flex;
+  height: 2.5em;
+  line-height: 1.5;
+  position: relative;
+  vertical-align: top;
+  transition: background-color 0.2s ease-in-out;
+}
+a.button {
+  text-decoration: none;
+}
+.button:hover {
+  /* background-color: #1772d0; */
+  /* use gray color for hover */
+  background-color: #193769;
+}
+
+
+.video, .video-wrapper {
+  position: relative;
+  width: 100%;
+}
+.video-wrapper .video-label {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.video-wrapper .video-label > * {
+  size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  height: 2.5em;
+  padding: 0.5em;
+  color: white;
+}
+.video-wrapper .video-label-with-fps > * {
+  height: 3.5em;
+}
+
+.video-wrapper .video-label > *:last-child {
+  text-align: right;
+}
+
+.video-fps {
+  font-size: 0.8em;
+  font-weight: 300;
+  margin-top: 0.2em;
+}
+
+.video video,
+.video iframe,
+.video canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+video.video-compare {
+  opacity: 0;
+  width: 100%;
+}
+canvas.video-compare {
+  width: 100%;
+  cursor: col-resize;
+}
+
+.abstract p {
+  text-align: justify;
+}
+
+.references div {
+  text-align: justify;
+  font-size: 0.9em;
+}
+
+.citation {
+  color: black;
+}
+
+pre {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  padding: 1.25em 1em;
+  white-space: pre;
+  word-wrap: normal;
+
+  background-color: #f5f5f5;
+  color: #4a4a4a;
+  font-size: .875em;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: monospace;
+  margin: 0.4em 0;
+  display: block;
+}
+
+pre code {
+  background-color: transparent;
+  font-size: 1em;
+  padding: 0;
+  word-break: normal;
+  font-weight: 400;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: monospace;
+  word-wrap: break-word;
+  white-space: break-spaces;
+}
+
+section {
+  margin: 2em 0;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(59 130 246);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(59 130 246);
+  cursor: pointer;
+}
+
+.slider-image {
+  width:20%;
+  position: relative;
+  --active-weight: 0%;
+  --current-color: color-mix(in srgb, rgb(59 130 246) var(--active-weight), #d3d3d3);
+}
+
+.slider-image::before {
+  content: " ";
+  position: relative;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--current-color);
+  display: block;
+  transform: translateX(-50%);
+}
+
+.slider-image > img {
+  width: 100%;
+  padding: 4px;
+  border: 2px solid var(--current-color);
+}
+
+/* Style the buttons that are used to open the tab content */
+.nav-item {
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  background-color: inherit;
+  float: left;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+  transition: 0.0s;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+/* Change background color of buttons on hover */
+.nav-item:hover {
+  background-color: #c7dc94;
+}
+
+/* Create an active/current tablink class */
+.nav-tabs .nav-link.active {
+  background-color: #5c7f17;
+  color:white;
+  font-weight: 500;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+}
+.nav a:hover {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.b-dics__slider {
+  color: #f0f0f0;
+}
+.b-dics__slider:after {
+  width: 2px;
+}
+
+@media (max-width: 1016px) {
+  .authors {
+    margin: 0px auto;
+    max-width: 70ch;
+  }
+  .authors > * {
+    flex-basis: 18ch;
+    max-width: 22ch;
+  }
+}
+
+@media (max-width:1120px) {
+  html {
+    padding: 0px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .github-corner {
+    display: none;
+  }
+
+  html {
+    padding: 0px 40px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .authors > * {
+    flex: 1 1 0px;
+    flex-basis: 17ch;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    padding: 0px 20px;
+  }
+  body {
+    font-size: 12px;
+  }
+}
+  

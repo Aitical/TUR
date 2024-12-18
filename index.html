@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap-4.4.1.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/dics.original.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAAI 2025 - Debiased All-in-one Image Restoration with Task Uncertainty Regularization</title>
+    <meta name="description" content="AAAI 2025 paper on Debiased All-in-one Image Restoration with Task Uncertainty Regularization.">
+    <meta name="keywords" content="Image Restoration, AAAI 2025, Research, AI" />
+    <meta name="author" content="Gang Wu, Junjun Jiang, Yijun Wang, Kui Jiang, Xianming Liu" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css" rel="stylesheet">
+    <script src="/event_handler.js"></script>
+    <script src="/dics.original.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="/images/title_icon.png" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;" alt="Title Logo">
+    </header>
+    <h1 style="text-align: center; font-size: 1.5em; margin-top: 1em;">
+      Debiased All-in-one Image Restoration with Task Uncertainty Regularization
+    </h1>
+    <h2 style="text-align: center; font-size: 1.2em; color: #555; margin-bottom: 1em;">
+      AAAI 2025
+    </h2>
+    <div class="authors">
+      <div class="author">
+        <span class="author-name">
+          <a href="https://scholar.google.com/citations?user=JSqb7QIAAAAJ">Gang Wu</a>
+        </span>
+        <span class="author-affiliation">Harbin Institute of Technology</span>
+      </div>
+      <div class="author">
+        <span class="author-name">
+          <a href="http://homepage.hit.edu.cn/jiangjunjun">Junjun Jiang</a>
+        </span>
+        <span class="author-affiliation">Harbin Institute of Technology</span>
+      </div>
+      <div class="author">
+        <span class="author-name">
+          <a>Yijun Wang</a>
+        </span>
+        <span class="author-affiliation">Harbin Institute of Technology</span>
+      </div>
+      <div class="author">
+        <span class="author-name">
+          <a href="https://github.com/kuijiang94">Kui Jiang</a>
+        </span>
+        <span class="author-affiliation">Harbin Institute of Technology</span>
+      </div>
+      <div class="author">
+        <span class="author-name">
+          <a href="http://homepage.hit.edu.cn/xmliu">Xianming Liu</a>
+        </span>
+        <span class="author-affiliation">Harbin Institute of Technology</span>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="button" href="https://openreview.net/forum?id=kx7eyKgEGz" style="margin: 10px; display: inline-block; background-color: #df5f5f;"><i class="ti ti-file-type-pdf"></i> Paper (OpenReview)</a>
+      <a class="button" href="https://github.com/Aitical/TUR" style="margin: 10px; display: inline-block; background-color: #414141;"><i class="fas fa-database" style="margin-right: 10px;"></i>Github</a>
+      <a class="button" href="https://huggingface.co/GWu/TUR" style="margin: 10px; display: inline-block; background-color: #cbae3b;"><i class="fas fa-database" style="margin-right: 10px;"></i>Models (HuggingFace)</a>
+    </div>
+
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        All-in-one image restoration is a fundamental low-level vision task with significant real-world applications. The primary challenge lies in addressing diverse degradations within a single model. While current methods primarily exploit task prior information to guide the restoration models, they typically employ uniform multi-task learning, overlooking the heterogeneity in model optimization across different degradation tasks. To eliminate the bias, we propose a task-aware optimization strategy, that introduces adaptive task-specific regularization for multi-task image restoration learning. Specifically, our method dynamically weights and balances losses for different restoration tasks during training, encouraging the implementation of the most reasonable optimization route. In this way, we can achieve more robust and effective model training. Notably, our approach can serve as a plug-and-play strategy to enhance existing models without requiring modifications during inference. Extensive experiments in diverse all-in-one restoration settings demonstrate the superiority and generalization of our approach. For example, AirNet retrained with TUR achieves average improvements of 1.16 dB on three distinct tasks and 1.81 dB on five distinct all-in-one tasks. These results underscore TUR's effectiveness in advancing the SOTAs in all-in-one image restoration, paving the way for more robust and versatile image restoration. The code and results are available on the project page https://github.com/Aitical/TUR.
+      </p>
+    </section>
+
+    <section style="text-align: justify;">
+      <h2>Overview</h2>
+      <figure style="margin: 0">
+        <img src="/images/overview.png" alt="Intro Image" style="width: 100%; margin: 1em auto; display: block;" />
+      </figure>
+    </section>
+
+    <section style="text-align: justify;">
+      <h2>Results</h2>
+      <figure style="margin: 0">
+        <img src="/images/results/table1.png" alt="Intro Image" style="width: 100%; margin: 1em auto; display: block;" />
+      </figure>
+      <figure style="margin: 0">
+        <img src="/images/results/table2.png" alt="Intro Image" style="width: 100%; margin: 1em auto; display: block;" />
+      </figure>
+      <figure style="margin: 0">
+        <img src="/images/results/table3.png" alt="Intro Image" style="width: 100%; margin: 1em auto; display: block;" />
+      </figure>
+      <figure style="margin: 0">
+        <img src="/images/results/table4.png" alt="Intro Image" style="width: 100%; margin: 1em auto; display: block;" />
+      </figure>
+
+    </section>
+
+    <section style="text-align: justify;">
+      <h2>Acknowledgements</h2>
+        <p>This project is based on <a href="https://github.com/XLearning-SCU/2022-CVPR-AirNet">AirNet</a>, <a href="https://github.com/va1shn9v/PromptIR">PromptIR</a>, <a href="https://github.com/Xiangtaokong/MiOIR/tree/main/basicsr">MioIR</a>, <a href="https://github.com/jeya-maria-jose/TransWeather">Transweather</a>, and <a href="https://github.com/zhuyr97/WGWS-Net">WGWS-Net</a>, thanks for their nice sharing.</p>
+
+    </section>
+
+    <section class="citation">
+      <h2>Citation</h2>
+      <span>If you find our work helpful, please kindly cite us using the following reference:</span>
+      <pre><code>@inproceedings{wu2025debiased,
+  title={Debiased All-in-one Image Restoration with Task Uncertainty Regularization},
+  author={Wu, Gang and Jiang, Junjun and Wang, Yijun and Jiang, Kui and Liu, Xianming},
+  booktitle={AAAI},
+  year={2025}
+}</code></pre>
+    </section>
+
+    <script src="/scripts.js"></script>
+  </body>
+</html>
