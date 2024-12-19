@@ -362,14 +362,6 @@ class PromptIR_uncertainty(BaseModel):   #纯净原版
             del self.lq
             del self.output
             torch.cuda.empty_cache()
-            if save_img:
-                un_img = visuals['un']
-                
-                save_un_path = osp.join(self.opt['path']['visualization'], f'{dataset_name}_un',
-                                                  f'{img_name}_{self.opt["name"]}.pth')
-                os.makedirs(os.path.dirname(save_un_path), exist_ok=True)
-                torch.save(un_img, save_un_path)
-
 
             if save_img:
                 if self.opt['is_train']:
@@ -414,7 +406,6 @@ class PromptIR_uncertainty(BaseModel):   #纯净原版
         out_dict = OrderedDict()
         out_dict['lq'] = self.lq.detach().cpu()
         out_dict['result'] = self.output.detach().cpu()
-        out_dict['un'] = self.uncertanty.detach().cpu()
         if hasattr(self, 'gt'):
             out_dict['gt'] = self.gt.detach().cpu()
         return out_dict

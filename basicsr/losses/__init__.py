@@ -5,11 +5,8 @@ from os import path as osp
 from basicsr.utils import get_root_logger, scandir
 from basicsr.utils.registry import LOSS_REGISTRY
 from .gan_loss import g_path_regularize, gradient_penalty_loss, r1_penalty
-from .basic_loss import l1_loss_type,l1_loss_type_DWA,l1_loss_type_DWA_T_0_1,l1_loss_type_DWA_T_1,l1_loss_type_DWA_T_10,l1_loss_type_LossWA_T_1,l1_loss_type_LossWA_T_10_with_ema,l1_loss_type_LossWA_T_0_1_with_ema,l1_loss_type_LossWA_T_10
-from .yml_loss import Rebalance_acc_dwa_L1Loss
-from .acc_loss import l1_loss_type_ACC_T_10,l1_loss_type_ACC_T_10_log,l1_loss_type_ACC_T_0_1_log,l1_loss_type_ACC_T_1_log
-from .promptIR_acc_loss import l1_loss_type_PromptIR_ACC_T_10_log
-from .pcgrad_loss import l1_loss_type_for_pcgrad
+from .basic_loss import l1_loss_type
+
 __all__ = ['build_loss', 'gradient_penalty_loss', 'r1_penalty', 'g_path_regularize']
 
 # automatically scan and import loss modules for registry

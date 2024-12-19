@@ -94,8 +94,6 @@ class BaseModel():
         elif scheduler_type == 'CosineAnnealingRestartLR':
             for optimizer in self.optimizers:
                 self.schedulers.append(lr_scheduler.CosineAnnealingRestartLR(optimizer, **train_opt['scheduler']))
-        elif scheduler_type == 'Pcgrad':   
-            pass  
         else:
             raise NotImplementedError(f'Scheduler {scheduler_type} is not implemented yet.')
 
@@ -236,10 +234,10 @@ class BaseModel():
 
         logger = get_root_logger()
         if crt_net_keys != load_net_keys:
-            logger.warning('Current net - load net :')
-            for v in sorted(list(crt_net_keys - load_net_keys )):
+            logger.warning('Current net - loaded net:')
+            for v in sorted(list(crt_net_keys - load_net_keys)):
                 logger.warning(f'  {v}')
-            logger.warning('Loaded net - Current net:')
+            logger.warning('Loaded net - current net:')
             for v in sorted(list(load_net_keys - crt_net_keys)):
                 logger.warning(f'  {v}')
 

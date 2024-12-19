@@ -22,7 +22,7 @@ import numpy as np
 
 
 @MODEL_REGISTRY.register()
-class IRModel_uncertainty(BaseModel):   #纯净原版
+class IRModel_uncertainty(BaseModel):   #用于SRResnet/Uformer  7任务训练
     """Base IR model, it will recored 7 type of losses."""
 
     def __init__(self, opt):

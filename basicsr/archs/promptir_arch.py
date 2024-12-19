@@ -255,11 +255,10 @@ class PromptIR(nn.Module):
         bias = False,
         LayerNorm_type = 'WithBias',   ## Other option 'BiasFree'
         decoder = True,
-        if_uncertainty = True
     ):
 
         super(PromptIR, self).__init__()
-        self.if_uncertainty = if_uncertainty
+
         self.patch_embed = OverlapPatchEmbed(inp_channels, dim)
         
         
@@ -320,11 +319,6 @@ class PromptIR(nn.Module):
         
         self.refinement = nn.Sequential(*[TransformerBlock(dim=int(dim*2**1), num_heads=heads[0], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_refinement_blocks)])
                     
-        self.var_conv = nn.Sequential(
-            nn.Conv2d(int(dim*2**1), int(dim*2**1), 3, 1, 1), nn.ELU(),
-            nn.Conv2d(int(dim*2**1), int(dim*2**1), 3, 1, 1), nn.ELU(),
-            nn.Conv2d(int(dim*2**1), out_channels, 3, 1, 1),nn.Softplus()
-        )            
         self.output = nn.Conv2d(int(dim*2**1), out_channels, kernel_size=3, stride=1, padding=1, bias=bias)
 
     def forward(self, inp_img,noise_emb = None):
@@ -381,13 +375,8 @@ class PromptIR(nn.Module):
 
         out_dec_level1 = self.refinement(out_dec_level1)
 
-        if self.if_uncertainty:
-            un = self.var_conv(out_dec_level1) 
-            out_dec_level1 = self.output(out_dec_level1) + inp_img
 
-            return out_dec_level1,un
-        
-        else:
-            out_dec_level1 = self.output(out_dec_level1) + inp_img
-            return out_dec_level1
+        out_dec_level1 = self.output(out_dec_level1) + inp_img
+
+        return out_dec_level1
 

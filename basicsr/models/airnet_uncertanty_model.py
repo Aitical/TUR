@@ -336,14 +336,6 @@ class AIRnet_uncertainty(BaseModel):   #纯净原版
 
             visuals = self.get_current_visuals()
             sr_img = tensor2img([visuals['result']])
-            if save_img:
-                un_img = visuals['un']
-                
-                save_un_path = osp.join(self.opt['path']['visualization'], f'{dataset_name}_un',
-                                                  f'{img_name}_{self.opt["name"]}.pth')
-                os.makedirs(os.path.dirname(save_un_path), exist_ok=True)
-                torch.save(un_img, save_un_path)
-
             metric_data['img'] = sr_img
             if 'gt' in visuals:
                 gt_img = tensor2img([visuals['gt']])
@@ -353,7 +345,6 @@ class AIRnet_uncertainty(BaseModel):   #纯净原版
             # tentative for out of GPU memory
             del self.lq
             del self.output
-            del self.uncertanty
             torch.cuda.empty_cache()
 
             if save_img:
@@ -370,19 +361,6 @@ class AIRnet_uncertainty(BaseModel):   #纯净原版
                 imwrite(sr_img, save_img_path)
                 # if '001' in save_img_path or '0801' in save_img_path or 'haze' in save_img_path:
                 #     imwrite(sr_img, save_img_path)
-
-            # if save_img:
-            #     if self.opt['is_train']:
-            #         save_img_path = osp.join(self.opt['path']['visualization'], img_name,
-            #                                  f'{img_name}_{current_iter}.png')
-            #     else:
-            #         if self.opt['val']['suffix']:
-            #             save_img_path = osp.join(self.opt['path']['visualization'], dataset_name,
-            #                                      f'{img_name}_{self.opt["val"]["suffix"]}.png')
-            #         else:
-            #             save_img_path = osp.join(self.opt['path']['visualization'], f'{dataset_name}_un',
-            #                                      f'{img_name}_{self.opt["name"]}.png')
-            #     imwrite(un_img, save_img_path)
 
             if with_metrics:
                 # calculate metrics
@@ -412,7 +390,6 @@ class AIRnet_uncertainty(BaseModel):   #纯净原版
         out_dict = OrderedDict()
         out_dict['lq'] = self.lq.detach().cpu()
         out_dict['result'] = self.output.detach().cpu()
-        out_dict['un'] = self.uncertanty.detach().cpu()
         if hasattr(self, 'gt'):
             out_dict['gt'] = self.gt.detach().cpu()
         return out_dict
